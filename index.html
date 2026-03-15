@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>System Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>🌸 System Manager</h1>
+
+<div class="controls">
+<input id="search" placeholder="Search alters..." oninput="renderAlters()">
+
+<select id="groupFilter" onchange="renderAlters()">
+<option value="">All Groups</option>
+</select>
+
+<button onclick="toggleTheme()">🌙 Theme</button>
+<button onclick="createAlter()">＋ Alter</button>
+</div>
+</header>
+
+<main id="alterContainer"></main>
+
+<div id="editor" class="hidden">
+
+<h2>Edit Alter</h2>
+
+<input id="alterName" placeholder="Name">
+<input id="alterGroup" placeholder="Group">
+<input id="alterSubgroup" placeholder="Subgroup">
+<input id="alterColour" type="color">
+
+<input id="alterAvatar" type="file" accept="image/*">
+
+<textarea id="alterBio" placeholder="Bio (Markdown supported)"></textarea>
+
+<div class="editorButtons">
+<button onclick="saveAlter()">Save</button>
+<button onclick="deleteAlter()">Delete</button>
+<button onclick="closeEditor()">Cancel</button>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
